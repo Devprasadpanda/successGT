@@ -74,7 +74,7 @@ export function ApplyModal() {
     try {
       const formData = new FormData(e.currentTarget);
       // Web3Forms access key — routes submissions to your registered email
-      formData.append("access_key", "0dc2c1d3-f889-4a4d-a19b-cff9299d7c7f");
+      formData.append("access_key", "4bb601dd-adfb-4e9d-8a7f-dbe3a5dfdd88");
       // Give the email a meaningful subject line
       formData.append("subject", "New Admission Enquiry — Success Group Tuition");
       // Friendly sender name shown in inbox

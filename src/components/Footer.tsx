@@ -64,7 +64,7 @@ export function Footer() {
               </li>
               <li className="flex gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                <a href="tel:+919876543210" className="hover:text-foreground">+91 74051 62060 & +91 88663 73336</a>
+                <a href="tel:+917405162060" className="hover:text-foreground">+91 74051 62060 & +91 88663 73336</a>
               </li>
               <li className="flex gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
@@ -79,9 +79,17 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-center gap-3 border-t border-border pt-6 text-center text-xs text-ink-soft">
-  <p>© {year} Success Group Tuition. All rights reserved.</p>
-</div>
+        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-center text-xs text-ink-soft sm:flex-row">
+          <p>© {year} Success Group Tuition. All rights reserved.</p>
+          <a
+            href="https://wa.me/918780083644"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-foreground"
+          >
+            Contact Developer
+          </a>
+        </div>
       </div>
     </footer>
   );
