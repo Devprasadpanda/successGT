@@ -115,6 +115,12 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        {/* Inline script to apply theme before first paint — prevents flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var t=localStorage.getItem('theme');var d=document.documentElement;if(t==='dark'||(t===null&&window.matchMedia('(prefers-color-scheme: dark)').matches)){d.classList.add('dark');}})();`,
+          }}
+        />
       </head>
       <body>
         {children}

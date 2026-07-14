@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Logo } from "./Logo";
 import { useApply } from "./ApplyContext";
+import { useTheme } from "@/hooks/useTheme";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -15,6 +16,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { openModal } = useApply();
+  const { theme, toggle } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -53,6 +55,13 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <button
+            onClick={toggle}
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            className="grid h-11 w-11 place-items-center rounded-full border border-border bg-background/80 text-foreground transition-colors hover:bg-surface"
+          >
+            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
           <button
             onClick={openModal}
             className="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition-all hover:shadow-lift hover:-translate-y-px lg:inline-flex"
